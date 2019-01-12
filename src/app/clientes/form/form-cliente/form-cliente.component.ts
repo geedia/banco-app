@@ -3,17 +3,20 @@ import { Cliente } from '../../cliente';
 import { ClienteService } from '../../cliente.service';
 import {Router, ActivatedRoute} from '@angular/router';
 import swal from 'sweetalert2';
+import { TarjetaCliente } from '../../tarjeta/tarjeta-cliente';
+import { TarjetaService } from '../../tarjeta/tarjeta.service';
 
 @Component({
   selector: 'app-form-cliente',
   templateUrl: './form-cliente.component.html'
 })
 export class FormClienteComponent implements OnInit {
-  private cliente: Cliente = new Cliente();
+  private cliente: Cliente;
   private tituloCrear: any = 'CREAR CLIENTE';
   private tituloEditar: any = 'EDITAR CLIENTE';
+  private tarjetas: TarjetaCliente[];
   constructor(private clienteService: ClienteService, private router: Router,
-    private activateRoute: ActivatedRoute) { }
+    private activateRoute: ActivatedRoute, private tarjetaServicio: TarjetaService) { }
   ngOnInit() {
     this.cargarCliente();
   }
@@ -34,6 +37,9 @@ export class FormClienteComponent implements OnInit {
       const id = params['id'];
       if (id) {
         this.clienteService.getCliente(id).subscribe( (cliente) => this.cliente = cliente);
+        this.tarjetaServicio.getTarjetasCliente(id).subscribe( (tarjetas) => this.tarjetas = tarjetas);
+      } else {
+        this.cliente = new Cliente();
       }
 
     });
@@ -41,6 +47,7 @@ export class FormClienteComponent implements OnInit {
   }
 
   update(): void {
+    this.cliente.tarjetas = this.tarjetas;
     this.clienteService.updateCliente(this.cliente).subscribe(
       response => {this.router.navigate(['/clientes']);
       swal('Cliente Editado', `Cliente ${this.cliente.nombre} actualizado con éxito!`, 'success');

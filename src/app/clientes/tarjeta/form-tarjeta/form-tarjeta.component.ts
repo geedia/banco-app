@@ -7,8 +7,7 @@ import { Cliente } from '../../cliente';
 
 @Component({
   selector: 'app-form-tarjeta',
-  templateUrl: './form-tarjeta.component.html',
-  styleUrls: ['./form-tarjeta.component.css']
+  templateUrl: './form-tarjeta.component.html'
 })
 export class FormTarjetaComponent implements OnInit {
   private tarjeta: TarjetaCliente = new TarjetaCliente();

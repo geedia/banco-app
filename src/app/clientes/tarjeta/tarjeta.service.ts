@@ -21,6 +21,10 @@ export class TarjetaService {
     return this.http.get<TarjetaCliente>(this.urlEndPoint + id);
   }
 
+  getTarjetasCliente(id): Observable<TarjetaCliente[]> {
+    return this.http.get<TarjetaCliente[]>(this.urlEndPoint + '/cliente/' + id);
+  }
+
   updateTarjeta(tarjeta: TarjetaCliente): Observable<TarjetaCliente> {
     return this.http.put<TarjetaCliente>(this.urlEndPoint, tarjeta, {headers: this.httpHeader});
   }
