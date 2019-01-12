@@ -1,0 +1,39 @@
+<div class="card bg-light">
+    <div class="card-header"> <h2 class="border text-secondary text-center border-left-0 border-right-0 border-top-0">Historial de Consumo</h2> </div>
+      <div class="card-body">
+          <form>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-primary">TARJETA:</label>
+                <div class="col-sm-10">
+                    <label class="col-form-label">{{tarjeta.numero | formatoCC }}</label>
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label class="col-sm-2 col-form-label text-primary">TIPO:</label>
+                  <div class="col-sm-10">
+                      <label class="col-form-label">{{tarjeta.tipo }}</label>
+                  </div>
+              </div>
+          </form>
+       <div>
+        <table class="table table-bordered table-striped text-center">
+          <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Descripcion</th>
+                <th>Monto</th>
+                </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let consumo of tarjeta.consumos">
+                <td>{{consumo.fecha | date:'yyyy-MM-dd'}}</td>
+              <td>{{consumo.descripcion}}</td>
+              <td>{{consumo.monto | currency:'$'}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn-success" [routerLink]="[ '/clientes/detalle',tarjeta.cliente.id]">Volver</button>
+    </div>
+  </div>
+  </div>

@@ -23,9 +23,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "../banco-app/node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../banco-app/node_modules/jquery/dist/jquery.slim.min.js",
+              "../banco-app/node_modules/popper.js/dist/umd/popper.min.js",
+              "../banco-app/node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {

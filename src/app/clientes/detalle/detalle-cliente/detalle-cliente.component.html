@@ -1,0 +1,102 @@
+<div class="container">
+<div class="card ">
+    <div class="card-header bg-dark text-light">
+      <h5>DETALLE CLIENTE</h5>
+    </div>
+    <div class="card-body">
+         <div class="row">
+            <div class="col-md-10">
+                <span class="help-block text-muted small-font" > Nombre: </span>
+                <input type="text" readonly class="form-control border-0" value="{{cliente.nombre}}">
+            </div>
+        </div>
+
+            <div class="row">
+              <div class="col-md-10">
+                  <span class="help-block text-muted small-font" > Direccion: </span>
+                  <input type="text" readonly class="form-control border-0" value="{{cliente.direccion}}">
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-10">
+                  <span class="help-block text-muted small-font" > Telefono: </span>
+                  <input type="text" readonly class="form-control border-0" value="{{cliente.telefono}}">
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-10">
+                  <span class="help-block text-muted small-font" > Ciudad: </span>
+                  <input type="text" readonly class="form-control border-0" value="{{cliente.ciudad}}">
+            </div>
+          </div>
+          <br>
+          <button class="btn-success" [routerLink]="[ '/clientes']">Volver</button>
+      </div>
+</div>
+<br>
+<div class="card " id="card2">
+    <div class="card-header bg-info"><h6>INFORMACION TARJETAS</h6>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-center ">
+              <tr>
+                <th>TIPO</th>
+                <th>NUMERO</th>
+                <th>CCV</th>
+                <th>CONSUMOS</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let tarjeta of cliente.tarjetas">
+                <td>{{tarjeta.tipo}}</td>
+                <td>{{tarjeta.numero | formatoCC}}</td>
+                <td>{{tarjeta.codigo}}</td>
+                <td class="text-center">
+                    <button class="btn-primary" [routerLink]="[ '/tarjeta/consumo/', tarjeta.id]"> Agregar</button>
+                    <button class="btn-light" [routerLink]="[ '/clientes/tarjeta/', tarjeta.id ]"> Ver Historial</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success" [routerLink]="[ '/tarjeta/', tarjeta.id]"> Editar</button>
+                    <button type="button" (click)="deleteTarjeta(tarjeta)" class="btn btn-danger" name="eliminar">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+      </table>
+
+     </div>
+</div>
+
+<br>
+<div class="card " id="card3">
+    <div class="card-header bg-secondary"><h6>HISTORIAL DE CONSUMOS</h6>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-center ">
+              <tr>
+                <th>TARJETA</th>
+                <th>DESCRIPCION</th>
+                <th>MONTO</th>
+                <th>FECHA</th>
+                <th>ACCION</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let consumo of consumos">
+                  <td>{{consumo.tarjeta.numero}}</td>
+                  <td>{{consumo.descripcion}}</td>
+                  <td>{{consumo.monto | currency:'$'}}</td>
+                  <td>{{consumo.fecha | date:'yyyy-MM-dd'}}</td>
+                  <td>
+                      <button type="button" class="btn btn-success" [routerLink]="[ '/consumo/', consumo.id]"> Editar</button>
+                      <button type="button" (click)="deleteConsumo(consumo)" class="btn btn-danger" name="eliminar">Eliminar</button>
+                  </td>
+                </tr>
+            </tbody>
+      </table>
+
+     </div>
+</div>
+</div>

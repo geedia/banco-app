@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header">
+        <h2 class="border border-primary text-secondary  border-left-0 border-right-0 border-top-0 text-center">Listado de Clientes</h2>
+    </div>
+    <div class="card-body">
+        <div class="my-2 text-left">
+            <button class="btn-primary btn btn-rounded" type="button" [routerLink]="[ '/clientes/form']">Crear Cliente</button>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-center">
+              <tr>
+                <th>NOMBRE</th>
+                <th>DIRECCION</th>
+                <th>CIUDAD</th>
+                <th>TELEFONO</th>
+                <th>TARJETAS</th>
+                <th>ACCION</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cliente of clientes">
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.direccion}}</td>
+                <td>{{cliente.ciudad}}</td>
+                <td>{{cliente.telefono}}</td>
+                <td>
+                  <ul *ngFor="let tarjeta of cliente.tarjetas">
+                    <li> {{tarjeta.numero | formatoCC}}</li>
+                  </ul>
+                 </td>
+                 <td class="text-center align-middle">
+                    <button type="button" name="button" [routerLink]="[ '/clientes/tarjeta', cliente.id ]" class="btn btn-success btn-sm">Agregar Tarjeta</button>
+                    <button type="button" name="button" [routerLink]="[ '/clientes/form', cliente.id ]" class="btn btn-primary btn-sm">Editar</button>
+                    <button type="button" name="button" [routerLink]="[ '/clientes/detalle', cliente.id ]" class="btn btn-secondary btn-sm">Ver Detalle</button>
+                    <button type="button" (click)="delete(cliente)" class="btn btn-danger btn-sm" name="eliminar">Eliminar</button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+          <p></p>
+    </div>
+  </div>
