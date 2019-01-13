@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ClienteService {
      cliente: Cliente;
-     private urlEndPoint = 'http://localhost:8080/cliente/';
+     private urlEndPoint = 'http://10.10.10.200:8080/cliente/';
 
      private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
     constructor(private http: HttpClient) { }

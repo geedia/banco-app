@@ -8,7 +8,7 @@ import { Asesor } from './asesor';
 })
 export class AsesorService {
   private asesor: Asesor[];
-  private urlEndPointAsesor = 'http://localhost:8080/asesor/';
+  private urlEndPointAsesor = 'http://10.10.10.200:8080/asesor/';
   private httpHeader = new HttpHeaders({'Content-type' : 'application/json'});
 
   constructor(private http: HttpClient) { }

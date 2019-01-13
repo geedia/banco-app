@@ -8,7 +8,7 @@ import { TarjetaCliente } from './tarjeta-cliente';
 })
 export class TarjetaService {
   private tarjeta: TarjetaCliente;
-  private urlEndPoint = 'http://localhost:8080/tarjeta/';
+  private urlEndPoint = 'http://10.10.10.200:8080/tarjeta/';
   private httpHeader = new HttpHeaders({'Content-type' : 'application/json'});
 
   constructor(private http: HttpClient) { }
