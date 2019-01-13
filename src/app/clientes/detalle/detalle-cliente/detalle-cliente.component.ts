@@ -13,9 +13,9 @@ import { TarjetaService } from '../../tarjeta/tarjeta.service';
   templateUrl: './detalle-cliente.component.html'
 })
 export class DetalleClienteComponent implements OnInit {
-  private cliente: Cliente;
-  private consumos: Consumo[];
-  private tarjetasCliente: TarjetaCliente[];
+  public cliente: Cliente;
+  public consumos: Consumo[];
+  public tarjetasCliente: TarjetaCliente[];
 
   constructor(private clienteService: ClienteService, private consumoService: ConsumoService
      , private router: Router, private activateRoute: ActivatedRoute

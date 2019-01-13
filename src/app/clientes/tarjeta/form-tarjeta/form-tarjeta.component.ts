@@ -10,10 +10,10 @@ import { Cliente } from '../../cliente';
   templateUrl: './form-tarjeta.component.html'
 })
 export class FormTarjetaComponent implements OnInit {
-  private tarjeta: TarjetaCliente = new TarjetaCliente();
-  private cliente: Cliente = new Cliente();
-  private tituloCrear: any = 'CREAR TARJETA';
-  private tituloEditar: any = 'EDITAR TARJETA';
+  public tarjeta: TarjetaCliente = new TarjetaCliente();
+  public cliente: Cliente = new Cliente();
+  public tituloCrear: any = 'CREAR TARJETA';
+  public tituloEditar: any = 'EDITAR TARJETA';
   constructor(private tarjetaService: TarjetaService, private router: Router,
     private activateRoute: ActivatedRoute) { }
 

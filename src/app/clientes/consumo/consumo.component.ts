@@ -10,9 +10,9 @@ import { ConsumoService } from './consumo.service';
 })
 export class ConsumoComponent implements OnInit {
 
-  private cliente: Cliente;
-  private tarjeta: TarjetaCliente;
-  private titulo: 'Historial de Consumo';
+  public cliente: Cliente;
+  public tarjeta: TarjetaCliente;
+  public titulo: 'Historial de Consumo';
   constructor(private consumoService: ConsumoService, private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {

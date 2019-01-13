@@ -1082,17 +1082,6 @@ var FormatoCCPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/clientes/tarjeta/form-tarjeta/form-tarjeta.component.css":
-/*!**************************************************************************!*\
-  !*** ./src/app/clientes/tarjeta/form-tarjeta/form-tarjeta.component.css ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NsaWVudGVzL3RhcmpldGEvZm9ybS10YXJqZXRhL2Zvcm0tdGFyamV0YS5jb21wb25lbnQuY3NzIn0= */"
-
-/***/ }),
-
 /***/ "./src/app/clientes/tarjeta/form-tarjeta/form-tarjeta.component.html":
 /*!***************************************************************************!*\
   !*** ./src/app/clientes/tarjeta/form-tarjeta/form-tarjeta.component.html ***!
@@ -1181,8 +1170,7 @@ var FormTarjetaComponent = /** @class */ (function () {
     FormTarjetaComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-form-tarjeta',
-            template: __webpack_require__(/*! ./form-tarjeta.component.html */ "./src/app/clientes/tarjeta/form-tarjeta/form-tarjeta.component.html"),
-            styles: [__webpack_require__(/*! ./form-tarjeta.component.css */ "./src/app/clientes/tarjeta/form-tarjeta/form-tarjeta.component.css")]
+            template: __webpack_require__(/*! ./form-tarjeta.component.html */ "./src/app/clientes/tarjeta/form-tarjeta/form-tarjeta.component.html")
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_tarjeta_service__WEBPACK_IMPORTED_MODULE_5__["TarjetaService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])

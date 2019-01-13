@@ -11,11 +11,11 @@ import { TarjetaCliente } from '../../tarjeta/tarjeta-cliente';
 })
 export class FormConsumoComponent implements OnInit {
 
-  private consumo: Consumo = new Consumo();
-  private tituloCrear: any = 'CREAR CONSUMO';
-  private tituloEditar: any = 'EDITAR CONSUMO';
-  private tarjeta: TarjetaCliente = new TarjetaCliente();
-  private idTarjeta: number;
+  public consumo: Consumo = new Consumo();
+  public tituloCrear: any = 'CREAR CONSUMO';
+  public tituloEditar: any = 'EDITAR CONSUMO';
+  public tarjeta: TarjetaCliente = new TarjetaCliente();
+  public idTarjeta: number;
 
   constructor(private consumoService: ConsumoService, private router: Router,
     private activateRoute: ActivatedRoute) { }

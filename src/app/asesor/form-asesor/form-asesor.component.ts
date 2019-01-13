@@ -10,9 +10,9 @@ import swal from 'sweetalert2';
   templateUrl: './form-asesor.component.html'
 })
 export class FormAsesorComponent implements OnInit {
-  private asesor: Asesor = new Asesor();
-  private tituloCrear: any = 'CREAR ASESOR';
-  private tituloEditar: any = 'EDITAR ASESOR';
+  public asesor: Asesor = new Asesor();
+  public tituloCrear: any = 'CREAR ASESOR';
+  public tituloEditar: any = 'EDITAR ASESOR';
   constructor(private asesorService: AsesorService, private router: Router,
     private activateRoute: ActivatedRoute) { }
 

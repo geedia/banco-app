@@ -11,10 +11,10 @@ import { TarjetaService } from '../../tarjeta/tarjeta.service';
   templateUrl: './form-cliente.component.html'
 })
 export class FormClienteComponent implements OnInit {
-  private cliente: Cliente;
-  private tituloCrear: any = 'CREAR CLIENTE';
-  private tituloEditar: any = 'EDITAR CLIENTE';
-  private tarjetas: TarjetaCliente[];
+  public cliente: Cliente;
+  public tituloCrear: any = 'CREAR CLIENTE';
+  public tituloEditar: any = 'EDITAR CLIENTE';
+  public tarjetas: TarjetaCliente[];
   constructor(private clienteService: ClienteService, private router: Router,
     private activateRoute: ActivatedRoute, private tarjetaServicio: TarjetaService) { }
   ngOnInit() {

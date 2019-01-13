@@ -8,7 +8,7 @@ import swal from 'sweetalert2';
   templateUrl: './asesor.component.html'
 })
 export class AsesorComponent implements OnInit {
-  private asesores: Asesor[];
+  public asesores: Asesor[];
   constructor(private asesorService: AsesorService) { }
 
   ngOnInit() {
