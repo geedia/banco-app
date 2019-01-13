@@ -11,8 +11,8 @@ export class ConsumoService {
   private tarjeta: TarjetaCliente;
   private consumo: Consumo;
 
-  private urlEndPointTarjeta = 'http://10.10.10.200:8080/tarjeta';
-  private urlEndPointConsumo = 'http://10.10.10.200:8080/consumo';
+  private urlEndPointTarjeta = 'http://192.168.100.200:8080/tarjeta';
+  private urlEndPointConsumo = 'http://192.168.100.200:8080/consumo';
 
      private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
     constructor(private http: HttpClient) { }
